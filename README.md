@@ -8,3 +8,5 @@ Yolo5 cuda \\ opencl
 Yolo5 extend et : araba hangi araba markası detaylı analiz edecek 
  
 
+#### Adımlar :
+
