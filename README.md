@@ -25,8 +25,8 @@ Bu proje, YOLOv5 modelini kullanarak video akışlarından araç nesnelerini alg
 
 1. **Projeyi klonlayın:**
 ```bash
-git clone https://github.com/kullaniciadi/objectDetectionPart1.git
-cd objectDetectionPart1
+git clone https://github.com/besmabakirci1/Object-Detection.git
+cd Object-Detection
 ```
 
 2. **Sanal ortam oluşturun:**
@@ -134,8 +134,9 @@ Her araç türü için farklı renkler kullanılır:
 ## 📋 Dosya Yapısı
 
 ```
-objectDetectionPart1/
-├── Object_Detection_V.py          # Ana uygulama
+Object-Detection/
+├── Object_Detection_V.py          # Ana uygulama (geliştirilmiş versiyon)
+├── MuratHoca_ObjectDetection_V.py # Orijinal versiyon
 ├── car_model_classifier.py         # Araç modeli sınıflandırıcı
 ├── requirements.txt                # Python bağımlılıkları
 ├── README.md                       # Bu dosya
@@ -182,6 +183,49 @@ Video işlendiğinde:
 **Kontroller:**
 - `q` tuşu → Çıkış
 - Video penceresi kapatılırsa işlem durur
+
+## 📂 Dataset Seçenekleri – Araç Model Tespiti
+
+### 1. Stanford Cars Dataset
+- **İçerik:** 16,185 görsel, 196 sınıf
+- **Detay:** Marka + model + yıl (ör. *2012 Tesla Model S*)
+- **Ekstra:** Bounding box + sınıf etiketleri mevcut
+- **Amaç:** İnce ayrım (fine-grained classification)
+
+### 2. VeRi-776
+- **İçerik:** 49,357 görsel, 776 araç, 20 kamera
+- **Ekstra:** Bounding box, marka, tip, renk etiketleri
+- **Amaç:** Araç yeniden tanıma (Re-ID), trafik senaryolarında takip
+
+### 3. Vehicle Dataset for YOLO
+- **İçerik:** 3,000 görsel, 3,830 nesne
+- **Sınıflar:** `car`, `threewheel`, `bus`, `truck`, `motorbike`, `van`
+- **Amaç:** YOLO için hızlı başlangıç – genel araç tespiti
+
+### 4. Roboflow Car Model Detection
+- **Kaynak:** [Roboflow Universe](https://universe.roboflow.com/mxk/car-model-detection/dataset/1)
+- **İndirme Komutu:**
+```bash
+curl -L "https://universe.roboflow.com/ds/FVQJTmNQ5U?key=LaeWMqO6ju" > roboflow.zip
+unzip roboflow.zip
+rm roboflow.zip
+```
+
+## 📖 Nesne Tespiti (Object Detection)
+
+- **Tanım:** Görüntü/videoda nesneleri **sınıflandırma + lokalizasyon**
+- **Çıktı:** Bounding Box + Class
+- **Farklar:**
+  - **Object Classification:** Tek sınıf → "Bu resimde araba var mı?"
+  - **Object Detection:** Nesneleri bulma ve etiketleme
+  - **Object Segmentation:** Piksel bazlı ayırma (daha maliyetli, daha detaylı)
+
+## 📊 Performans Ölçütleri
+
+- **IoU (Intersection over Union):** Tahmin kutusu ile gerçek kutu kesişim oranı
+- **Precision (Kesinlik):** Doğru pozitif / tüm pozitif tahminler
+- **Recall (Duyarlılık):** Doğru pozitif / gerçek pozitifler
+- **mAP (mean Average Precision):** Çoklu sınıf ortalaması
 
 ## 🤝 Katkıda Bulunma
 
