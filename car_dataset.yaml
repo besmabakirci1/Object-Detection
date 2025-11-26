@@ -1,0 +1,32 @@
+
+# Araç Veri Seti Konfigürasyonu
+# Bu dosya YOLOv5 model eğitimi için kullanılır
+
+# Veri seti yolu
+path: ../dataset  # Veri setinizin bulunduğu klasör
+
+# Eğitim, doğrulama ve test setleri
+train: images/train  # Eğitim görüntüleri
+val: images/val      # Doğrulama görüntüleri
+test: images/test    # Test görüntüleri
+
+# Sınıf sayısı
+nc: 6
+
+# Sınıf isimleri (Türkçe açıklamaları ile)
+names:
+  0: sedan      # Binek Otomobil
+  1: van        # Minibüs/Ticari Araç
+  2: truck      # Kamyon
+  3: motorcycle # Motosiklet
+  4: bus        # Otobüs
+  5: pickup     # Kamyonet
+
+# Veri seti istatistikleri
+# Bu bilgiler otomatik olarak hesaplanacak
+# Toplam görüntü sayısı: ~10,000
+# Eğitim seti: ~8,000 görüntü
+# Doğrulama seti: ~1,500 görüntü
+# Test seti: ~500 görüntü
+
+
