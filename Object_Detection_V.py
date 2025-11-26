@@ -91,6 +91,7 @@ class ObjectDetection:
                     'format': 'best[height<=720]/best',
                     'outtmpl': temp_video.replace('.mp4', '.%(ext)s'),
                     'quiet': False,
+                    'noplaylist': True,  # Sadece tek video indir, playlist değil
                     'user_agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
                     'extractor_args': {'youtube': {'player_client': ['android', 'web']}},
                 }
